@@ -1,376 +1,476 @@
-e:
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Xyla Cayso</title>
-
-<style>
-
-* {
-
-margin: 0;
-
-padding: 0;
-
-box-sizing: border-box;
-
-}
-
-body {
-
-font-family: Arial, sans-serif;
-
-background: #A8A492;
-
-color: #200f0f;
-
-}
-
-header {
-
-background: #A8A492;
-
-color: white;
-
-text-align: center;
-
-padding: 22px;
-
-}
-
-header h1 {
-
-font-size: 25px;
-
-letter-spacing: 2px;
-
-}
-
-nav {
-
-background: #333333;
-
-text-align: center;
-
-padding: 15px;
-
-}
-
-nav a {
-
-color: white;
-
-text-decoration: none;
-
-SIT-FO-045 Page 4 of 10
-
-font-size: 13px;
-
-font-weight: bold;
-
-margin: 0 25px;
-
-}
-
-nav a:hover {
-
-color: #cccccc;
-
-}
-
-input[type="radio"] {
-
-display: none;
-
-}
-
-.card {
-
-width: 90%;
-
-max-width: 900px;
-
-min-height: 500px;
-
-margin: 40px auto;
-
-background: white;
-
-padding: 50px;
-
-text-align: center;
-
-border-radius: 10px;
-
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-
-}
-
-.page {
-
-display: none;
-
-}
-
-#home-btn:checked ~ .card #home,
-
-#about-btn:checked ~ .card #about,
-
-#gallery-btn:checked ~ .card #gallery,
-
-#contact-btn:checked ~ .card #contact {
-
-display: block;
-
-}
-
-.page h2 {
-
-font-size: 28px;
-
-margin-bottom: 12px;
-
-}
-
-.subtitle {
-
-color: #888888;
-
-font-size: 14px;
-
-margin-bottom: 30px;
-
-}
-
-SIT-FO-045 Page 5 of 10
-
-.description {
-
-max-width: 600px;
-
-margin: 20px auto;
-
-color: #666666;
-
-line-height: 1.7;
-
-font-size: 14px;
-
-}
-
-.images {
-
-display: flex;
-
-justify-content: center;
-
-gap: 25px;
-
-margin: 30px 0;
-
-}
-
-.images img {
-
-width: 120px;
-
-height: 120px;
-
-object-fit: cover;
-
-border-radius: 50%;
-
-border: 4px solid #555555;
-
-}
-
-.button {
-
-display: inline-block;
-
-margin-top: 20px;
-
-padding: 12px 25px;
-
-background: #555555;
-
-color: white;
-
-text-decoration: none;
-
-border-radius: 20px;
-
-font-size: 12px;
-
-}
-
-footer {
-
-background: #333333;
-
-color: white;
-
-text-align: center;
-
-padding: 18px;
-
-font-size: 12px;
-
-}
-
-SIT-FO-045 Page 6 of 10
-
-@media (max-width: 600px) {
-
-nav a {
-
-margin: 0 8px;
-
-font-size: 11px;
-
-}
-
-.card {
-
-padding: 30px 20px;
-
-}
-
-.images {
-
-gap: 10px;
-
-}
-
-.images img {
-
-width: 90px;
-
-height: 90px;
-
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>XYLA CAYSO</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    body {
+      background-color: #f7dce8;
+      color: #222;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 4px solid #ff69b4;
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff69b4;
+    }
+
+    nav {
+      background-color: #111111;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav button:hover,
+    nav button.active {
+      color: #ff69b4;
+    }
+
+    main {
+      height: calc(100vh - 180px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .page {
+      display: none;
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .card {
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 12px;
+      padding: 40px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.25);
+    }
+
+    .card h1 {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .card h1::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #ff69b4;
+      margin: 12px auto;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #d63384;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    .avatar-group {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 25px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid black;
+      transition: 0.3s;
+    }
+
+    .avatar:hover {
+      border-color: #ff69b4;
+      transform: scale(1.08);
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 11px 28px;
+      border-radius: 20px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff69b4;
+      color: black;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid black;
+      border-radius: 10px;
+    }
+
+    .contact-info {
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .contact-info strong {
+      color: #d63384;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      color: #ffb6d5;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      border-top: 3px solid #ff69b4;
+    }
+
+    @media (max-width: 600px) {
+
+      nav ul {
+        gap: 15px;
+      }
+
+      nav button {
+        font-size: 0.7rem;
+      }
+
+      main {
+        height: calc(100vh - 190px);
+        padding: 20px 15px;
+      }
+
+      .card {
+        padding: 25px 15px;
+      }
+
+      .card h1 {
+        font-size: 1.2rem;
+      }
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+      }
+
+      .gallery img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<input type="radio" name="page" id="home-btn" checked>
+  <header>
 
-<input type="radio" name="page" id="about-btn">
+    <div class="brand-title">
 
-<input type="radio" name="page" id="gallery-btn">
+      <img
+        src="monalisa.jpg"
+        alt="Mona Lisa"
+        class="brand-logo"
+      >
 
-<input type="radio" name="page" id="contact-btn">
+      <span>XYLA CAYSO</span>
 
-<header>
+    </div>
 
-<h1>Xyla's Creatives</h1>
+    <nav>
+      <ul>
 
-</header>
+        <li>
+          <button class="nav-btn active" onclick="showPage('home', this)">
+            HOME
+          </button>
+        </li>
 
-<nav>
+        <li>
+          <button class="nav-btn" onclick="showPage('about', this)">
+            ABOUT
+          </button>
+        </li>
 
-<label for="home-btn">
+        <li>
+          <button class="nav-btn" onclick="showPage('gallery', this)">
+            GALLERY
+          </button>
+        </li>
 
-<a>HOME</a>
+        <li>
+          <button class="nav-btn" onclick="showPage('contact', this)">
+            CONTACT
+          </button>
+        </li>
 
-</label>
+      </ul>
+    </nav>
 
-<label for="about-btn">
+  </header>
 
-<a>ABOUT</a>
+  <main>
 
-</label>
+    <section id="home" class="page active">
 
-<label for="gallery-btn">
+      <div class="card">
 
-<a>GALLERY</a>
+        <h1>THIRD YEAR: THE ART OF ELEGANCE</h1>
 
-</label>
+        <p class="subtitle">
+          Three years of creativity, growth, and unforgettable moments
+        </p>
 
-<label for="contact-btn">
+        <div class="avatar-group">
 
-<a>CONTACT</a>
+          <img
+            src="IMG_20261013_090114.jpg"
+            alt="Mona Lisa"
+            class="avatar"
+          >
 
-</label>
+        </div>
 
-SIT-FO-045 Page 7 of 10
+        <p class="description">
+          Welcome to the Third Year of Xyla Cayso.
+          This website celebrates creativity, individuality,
+          growth, and memorable experiences through a
+          sophisticated black and pink aesthetic inspired
+          by the timeless beauty of art.
+        </p>
 
-</nav>
+        <button
+          class="btn"
+          onclick="showPage('about', document.querySelectorAll('.nav-btn')[1])">
+          Learn More &gt;
+        </button>
 
-<main class="card">
+      </div>
 
-<div id="home" class="page">
+    </section>
 
-<h2>
+    <section id="about" class="page">
 
-Welcome 
+      <div class="card">
 
-</h2>
+        <h1>ABOUT XYLA CAYSO</h1>
 
-<p class="subtitle">
+        <p class="subtitle">
+          Creativity • Elegance • Growth
+        </p>
 
-HUMAN INTERACTION ACTIVITY 5 LABORATORY
+        <p class="description">
+          Welcome to my creative space. This website represents
+          my journey and experiences during my third year.
+          It combines classic elegance with a modern
+          black and pink aesthetic.
+        </p>
 
-</p>
+        <button
+          class="btn"
+          onclick="showPage('home', document.querySelectorAll('.nav-btn')[0])">
+          BACK TO HOME
+        </button>
 
-<div class="images">
+      </div>
 
-<img src="https://encrypted-
-tbn0.gstatic.com/images?q=tbn:ANd9GcSl8ySIBUUgVtw7I4bkN9HK-IBDNIb-grZseAVooL0S-g&s"
+    </section>
 
-alt="firstprof.png">
+    <section id="gallery" class="page">
 
-<img src="https://encrypted-
-tbn0.gstatic.com/images?q=tbn:ANd9GcSl8ySIBUUgVtw7I4bkN9HK-IBDNIb-grZseAVooL0S-g&s"
+      <div class="card">
 
-alt="Creative Image 2">
+        <h1>GALLERY</h1>
 
-<img src="https://encrypted-
-tbn0.gstatic.com/images?q=tbn:ANd9GcSl8ySIBUUgVtw7I4bkN9HK-IBDNIb-grZseAVooL0S-g&s"
+        <p class="subtitle">
+          A collection of art and inspiration
+        </p>
 
-alt="Creative Image 3">
+        <div class="gallery">
 
-</div>
+          <img
+            src="IMG_20261013_090114.jpg"
+            alt="Mona Lisa"
+          >
 
-<p class="description">
+          <img
+            src="IMG_20261013_090114.jpg"
+            alt="Mona Lisa"
+          >
 
-“The visual design needs to tell the story. It’s not design for design. It 
-needs to reflect reality. The design needs to have a flow that goes well with the story and 
-supports the story.” —Patrice Vermette
+          <img
+            src="IMG_20261013_090114.jpg"
+            alt="Mona Lisa"
+          >
 
-</p>
+        </div>
 
-</div>
+        <br>
 
-<button type="button">LEARN MORE</button>
+        <button
+          class="btn"
+          onclick="showPage('home', document.querySelectorAll('.nav-btn')[0])">
+          BACK TO HOME
+        </button>
 
-<div id="about" class="page">
+      </div>
 
-<h2>
+    </section>
 
-About Me
+    <section id="contact" class="page">
 
-</h2>
+      <div class="card">
 
-<p class="subtitle">
+        <h1>CONTACT</h1>
 
-Get to know Xyla Cayso.
+        <p class="subtitle">
+          Get in touch with Xyla Cayso
+        </p>
 
-</p>
+        <div class="contact-info">
 
-<p class="description">
+          <p>
+            <strong>Name:</strong> Xyla Cayso
+          </p>
 
-Hi! I'm Xyla Cayso.
+          <p>
+            <strong>Email:</strong> xylacayso@example.com
+          </p>
+
+          <p>
+            <strong>Theme:</strong> Black & Pink
+          </p>
+
+        </div>
+
+        <br>
+
+        <button
+          class="btn"
+          onclick="showPage('home', document.querySelectorAll('.nav-btn')[0])">
+          BACK TO HOME
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2027 XYLA CAYSO — THIRD YEAR
+  </footer>
+
+  <script>
+    function showPage(pageId, button) {
+
+      const pages = document.querySelectorAll(".page");
+
+      pages.forEach(function(page) {
+        page.classList.remove("active");
+      });
+
+      document.getElementById(pageId).classList.add("active");
+
+      const buttons = document.querySelectorAll(".nav-btn");
+
+      buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  </script>
+
+</body>
+</html>
